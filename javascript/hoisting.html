@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation - Student Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="light-mode">
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>InterviewPrep</span>
+            </div>
+            <button class="toggle-btn" id="toggleBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="theme-toggle">
+            <button class="theme-toggle-btn" id="themeToggle">
+                <i class="fas fa-moon" id="themeIcon"></i>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="sidebar-menu">
+            <div class="menu-item">
+                <a href="#" class="menu-link active">
+                    <i class="fas fa-home menu-icon"></i>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+            </div>
+
+            <!-- Menu will be rendered dynamically by main.js -->
+            <div class="sidebar-menu"></div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="d-md-none mb-3">
+            <button class="btn btn-primary" id="mobileToggle">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+
+        <div class="content-card rounded-3 p-1 shadow-sm">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+                    <div class="card">
+                        <div class="card-header bg-secondary">
+                            What is Hoisting In JavaScript
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Hoisting is a JavaScript behavior where in Memory Allocation phase variable which are
+                                declared with var are assigned undefined value and Function declation stored directly,
+                                so Before initialization we can acces variable and we can invoke function also.
+                            </p>
+                            <ul>
+                                <li>Variable declared with var and Normal function supports hoisting</li>
+                                <li>let & const does't support hoisting as it does with var They will be tempral Dead
+                                    zone till it initialize </li>
+                                <li>Normal function only support Hoisting not arrow Function </li>
+                                <li>class also does't support Hoisting</li>
+                            </ul>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                                    <pre>
+ console.log(name); // ✅ Undefined
+ var name = "John";
+ console.log(name); // John
+        </pre>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                                    <pre>
+var name;  // Hoisted to the top
+console.log(name); // undefined
+name = "John";
+console.log(name); // John
+        </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+                    <div class="card">
+                        <div class="card-header bg-secondary">
+                            Temporal Dead Zone
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                The Temporal Dead Zone is the period between the start of a function or block
+                                execution and
+                                the point where a let or const variable is initialized.
+                            </p>
+                            <pre>
+function prinetName() {
+   var nam1= "sss";
+onsole.log(x); // ❌ ReferenceError
+et x = 10;
+onsole.log(x); // ✅ 10</pre>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+                    <div class="card">
+                        <div class="card-header bg-secondary">
+                            let - const - arrow fun - Fun expression
+                        </div>
+                        <div class="card-body">
+                           <div class="row">
+                                <div class="col-6">
+<pre>console.log('Before '+courseName)
+//Cannot access 'courseName' before initialization
+let courseName = "Angular";
+console.log('After '+courseName)
+//output Angular</pre>
+                                </div>
+                                <div class="col-6">
+<pre>console.log('Before '+courseName)
+//Cannot access 'courseName' before initialization
+const courseDuration = "3 Month";
+console.log('After '+courseDuration)
+//output 3 Month</pre>
+                                </div>
+                                <div class="col-6">
+<pre>print2Sqr()
+//TypeError: print2Sqr is not a function
+var print2Sqr = () => {
+    console.log("square " + 4)
+}
+print2Sqr()
+//output square 4</pre>
+                                </div>
+                                <div class="col-6">
+<pre>printSquareOf2()
+//TypeError: Cannot access 'print2Sqr' before initialization
+var print2Sqr = function()  {
+    console.log("square " + 4)
+}
+print2Sqr()
+//output=> square 4 </pre>
+                                </div>
+                           </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log('Before '+courseName)
+
+        let courseName = "Angular";
+        console.log('After '+courseName)
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

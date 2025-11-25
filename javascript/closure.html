@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Preparation - Student Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="light-mode">
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>InterviewPrep</span>
+            </div>
+            <button class="toggle-btn" id="toggleBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="theme-toggle">
+            <button class="theme-toggle-btn" id="themeToggle">
+                <i class="fas fa-moon" id="themeIcon"></i>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="sidebar-menu">
+            <div class="menu-item">
+                <a href="#" class="menu-link active">
+                    <i class="fas fa-home menu-icon"></i>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+            </div>
+
+            <!-- Menu will be rendered dynamically by main.js -->
+            <div class="sidebar-menu"></div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="d-md-none mb-3">
+            <button class="btn btn-primary" id="mobileToggle">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+        </div>
+
+        <div class="content-card rounded-3 p-1 shadow-sm">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    What is a Closure? (2 - 10+)
+                                </div>
+                                <div class="card-body">
+                                    <p>A closure is the combination of a function and its lexical environment. It allows
+                                        the function to access variables from its outer scope even after that scope has
+                                        been removed from the call stack.</p>
+                                    <p>
+                                        A closure is a way by which function remembers the variables from its lexical scope even
+                                        after the
+                                        function has finished executing.
+                                    </p>
+                                    <p>
+                                        Cloures is a combination of functions bundled together with a reference to its
+                                        sorrounding state
+
+                                        A Cloures gives you access to an outer functions scope from inner function
+                                    </p>
+                                    <div class="row">
+                                        
+                                        <div class="col-6">
+                                            <pre>
+var globalName = "ABC";
+function outer() {
+    const outerName = "MNO"
+    function inner() {
+        console.log('inner console '+outerName)
+    }
+    inner()
+}
+outer()
+output : inner console MNO
+                                </pre>
+                                        </div>
+                                        <div class="col-6">
+<pre>
+function outer() {
+    let count = 0;
+    function inner() {
+        count++;
+        console.log(count);
+    } 
+    return inner;
+} 
+const counter = outer();
+counter(); // Output: 1
+counter(); // Output: 2
+counter(); // Output: 3 
+        </pre>
+                                        </div>
+                                    </div>
+                                    
+        <script>
+            var globalName = "ABC";
+            function outer() {
+                const outerName = "MNO"
+                function inner() {
+                    console.log(outerName)
+                }
+                inner()
+            }
+            outer()
+        </script>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    How Closures Work Internally
+                                </div>
+                                <div class="card-body">
+                                    <p>When JavaScript executes a function, it creates an execution context with:</p>
+                                    <ul>
+                                        <li>Local Variables</li>
+                                        <li>Scope Chain (Lexical Environment)</li>
+                                        <li>Function Reference (if returned)</li>
+                                    </ul>
+                                    <p> Memory Allocation: The variable (count) is not garbage collected because the
+                                        returned function still references it.</p>
+                                        <p>counter = 0 stored in HEAP (because closure needs it)</p>
+                                        <p>Closures are created only when inner function references outer variables.</p>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+
+                                        </div>
+                                    </div>
+                                    <pre>
+function createCounter() {
+    let count = 0;
+    return {
+        increment: function () {
+            count++;
+            console.log(count);
+        },
+        decrement: function () {
+            count--;
+            console.log(count);
+        }
+    };
+}
+const counter = createCounter();
+const counter2 = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+counter.decrement(); // 1
+counter2.increment(); //1             
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-12 col-sm-12 pt-2">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    In above example Problem with closure that it count variable won't be garbage
+                                    collected, so how to solve this
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                                            <p>once we do counter = null, the closure is dereferenced, and the
+                                                JavaScript engine’s garbage collector can safely clean up the memory
+                                                used by count</p>
+                                        </div>
+                                    </div>
+                                    <pre>
+function createCounter() {
+    let count = 0;
+    return {
+        increment: function () {
+            count++;
+            console.log(count);
+        },
+        decrement: function () {
+            count--;
+            console.log(count);
+        }
+    };
+}
+const counter = createCounter(); 
+counter.increment(); // 1
+counter.increment(); // 2
+counter.decrement(); // 1   
+counter =  null;       
+                                </pre>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>
