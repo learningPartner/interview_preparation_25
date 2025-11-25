@@ -1,16 +1,13 @@
 // Detect base path for GitHub Pages compatibility
 function getBasePath() {
-    // Always use /interview_preparation_25/ for deployed version
-    // For local development, this will still work correctly
-    const pathname = window.location.pathname;
+    const hostname = window.location.hostname;
     
-    // If already contains /interview_preparation_25/, use it
-    if (pathname.includes('/interview_preparation_25/')) {
-        return '/interview_preparation_25/';
+    // If hosted on GitHub Pages
+    if (hostname.includes('github.io')) {
+        return 'https://learningpartner.github.io/interview_preparation_25/';
     }
     
-    // For local file:// protocol or localhost without the repo path, use /interview_preparation_25/
-    // This ensures consistency whether local or deployed
+    // Local development (http://127.0.0.1 or localhost)
     return '/interview_preparation_25/';
 }
 
