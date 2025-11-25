@@ -8,7 +8,7 @@ function getBasePath() {
     }
     
     // Local development (http://127.0.0.1 or localhost)
-    return '/interview_preparation_25/';
+    return '/';
 }
 
 const BASE_PATH = getBasePath();
