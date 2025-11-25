@@ -1,10 +1,20 @@
+// Detect base path for GitHub Pages compatibility
+function getBasePath() {
+    // Check if hosted on GitHub Pages (URL contains /interview_preparation_25/)
+    const pathname = window.location.pathname;
+    const match = pathname.match(/\/interview_preparation_25\//);
+    return match ? '/interview_preparation_25/' : '/';
+}
+
+const BASE_PATH = getBasePath();
+
 // Menu items configuration - easily add new items here
 const menuItems = [
     {
         id: 'dashboard',
         label: 'Dashboard',
         icon: 'fas fa-home',
-        href: 'index.html',
+        href: `${BASE_PATH}index.html`,
         submenu: null
     },
     {
@@ -12,10 +22,10 @@ const menuItems = [
         label: 'JavaScript',
         icon: 'fas fa-code',
         submenu: [
-            { label: 'Overview', icon: 'fas fa-laptop-code', href: '/javascript/overview.html' },
-            { label: 'Exe Context -EventLoop', icon: 'fas fa-project-diagram', href: '/javascript/executionEventLoop.html' },
-             { label: 'Hoisting', icon: 'fas fa-database', href: '/javascript/hoisting.html' },
-            { label: 'Closure', icon: 'fas fa-database', href: '/javascript/closure.html' },
+            { label: 'Overview', icon: 'fas fa-laptop-code', href: `${BASE_PATH}javascript/overview.html` },
+            { label: 'Exe Context -EventLoop', icon: 'fas fa-project-diagram', href: `${BASE_PATH}javascript/executionEventLoop.html` },
+             { label: 'Hoisting', icon: 'fas fa-database', href: `${BASE_PATH}javascript/hoisting.html` },
+            { label: 'Closure', icon: 'fas fa-database', href: `${BASE_PATH}javascript/closure.html` },
             { label: 'System Design', icon: 'fas fa-network-wired', href: '#' }
         ]
     },
