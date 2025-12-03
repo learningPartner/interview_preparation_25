@@ -31,7 +31,8 @@ const menuItems = [
             { label: 'Exe Context -EventLoop', icon: 'fas fa-project-diagram', href: `${BASE_PATH}javascript/executionEventLoop.html` },
              { label: 'Hoisting', icon: 'fas fa-database', href: `${BASE_PATH}javascript/hoisting.html` },
             { label: 'Closure', icon: 'fas fa-database', href: `${BASE_PATH}javascript/closure.html` },
-            { label: 'System Design', icon: 'fas fa-network-wired', href: '#' }
+            { label: 'Functions n More', icon: 'fas fa-database', href: `${BASE_PATH}javascript/functions.html` },
+            { label: 'ES-6 Features', icon: 'fas fa-network-wired', href: `${BASE_PATH}javascript/es6features.html`}
         ]
     },
     {

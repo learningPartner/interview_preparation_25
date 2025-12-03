@@ -9,13 +9,9 @@
 
 <body>
     <script>
-        printSquareOf2()
-        //ReferenceError: Cannot access 'printSquareOf2' before initialization
-        var printSquareOf2 = function()  {
-            console.log("square " + 4)
-        }
+        const add  = new Function('a', 'b', 'return a + b')
 
-
+        
     </script>
 </body>
 
