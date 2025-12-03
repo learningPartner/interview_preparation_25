@@ -91,14 +91,23 @@ const add = (a, b) => a + b; </pre>
 const add = new Function('a', 'b', 'return a + b'); </pre>
                             </div>
                         </div>
-                        <p>when a function is executed , javascript creates an execution context with
-                            <ul>
-                                <li>Variable Environment</li>
-                                <li>Lexical Environment (let, const, inner functions)</li>
-                                <li>this binding</li>
-                                <li>arguments object</li>
-                                <li>Scope chain linking to outer environments (this enabled closure)</li>
-                            </ul> </p>
+                        <p>when a function is executed , javascript creates an execution context with  </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul>
+                                    <li>Variable Environment</li>
+                                    <li>Lexical Environment (let, const, inner functions)</li>
+                                    <li>this binding</li> 
+                                </ul>
+                            </div>
+                             <div class="col-6">
+                                <ul> 
+                                    <li>arguments object</li>
+                                    <li>Scope chain linking to outer environments (this enabled closure)</li>
+                                </ul>
+                            </div>
+                        </div>
+                            
                     </div>
                 </div>
             </div>
@@ -431,7 +440,7 @@ console.log("End");
                                 <pre>
  
 (function() {
-   console.log("This function runs immediately!");
+   console.log("runs immediately!");
 })();
                                
 </pre>
@@ -439,14 +448,14 @@ console.log("End");
                             <div class="col-12 col-md-4 col-lg-4 col-sm-4">
                                 <pre>
 (function(name) {
-    console.log("Hello, " + name + "!");
-})("Alice");                                    
+    console.log("Hello, "+ name+"!");
+})("Alice");       
 </pre>
                             </div>
                             <div class="col-12 col-md-4 col-lg-4 col-sm-4">
                                 <pre>
 (() => {
-    console.log("IIFE using an arrow function!");
+    console.log("arrow function!");
 })();
                                 </pre>
                             </div>
@@ -691,9 +700,12 @@ function* printNum() {
     console.log(3)
 } 
 const genFun =  printNum();
-console.log(genFun.next())//{value: 1, done: false}
-console.log(genFun.next())//{value: 2, done: false}
-console.log(genFun.next())//{value: undefined, done: true}
+console.log(genFun.next())
+//{value: 1, done: false}
+console.log(genFun.next())
+//{value: 2, done: false}
+console.log(genFun.next())
+//{value: undefined, done: true}
                                 </pre>
                             </div>
                             <div class="col-12 col-md-6 col-lg-6 col-sm-6">
