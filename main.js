@@ -32,7 +32,7 @@ const menuItems = [
              { label: 'Hoisting', icon: 'fas fa-database', href: `${BASE_PATH}javascript/hoisting.html` },
             { label: 'Closure', icon: 'fas fa-database', href: `${BASE_PATH}javascript/closure.html` },
             { label: 'Functions n More', icon: 'fas fa-database', href: `${BASE_PATH}javascript/functions.html` },
-            { label: 'ES-6 Features', icon: 'fas fa-network-wired', href: `${BASE_PATH}javascript/es6features.html`}
+            { label: 'ES-6 Features', icon: 'fas fa-network-wired', href: `${BASE_PATH}javascript/es6features.html`},
             { label: 'Promise', icon: 'fas fa-network-wired', href: `${BASE_PATH}javascript/promise.html`}
         ]
     },
